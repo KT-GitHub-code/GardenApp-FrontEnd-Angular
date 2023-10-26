@@ -1,0 +1,9 @@
+.page-header-primary{
+  display: flex;
+}
+.page-header-primary-nav{
+  margin-left: 200px;
+  font-size: 16px;
+  width: 100vh;
+  padding: 15px;
+}

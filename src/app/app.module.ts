@@ -5,16 +5,25 @@ import { AppComponent } from './app.component';
 import { GardenComponent } from './components/garden/garden.component';
 import { PlantComponent } from './components/plant/plant.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import {RouterLink, RouterLinkActive} from "@angular/router";
+import {RoutingModule} from "./routing.module";
+import {NotFoundComponent} from "./components/not-found/not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     GardenComponent,
     PlantComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterLink,
+    RouterLinkActive,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
