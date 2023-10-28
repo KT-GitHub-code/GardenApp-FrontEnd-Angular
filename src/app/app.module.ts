@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {RoutingModule} from "./routing.module";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import {NotFoundComponent} from "./components/not-found/not-found.component";
     HomeComponent,
     NotFoundComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterLink,
-    RouterLinkActive,
-    RoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterLink,
+        RouterLinkActive,
+        RoutingModule,
+        NgOptimizedImage
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
