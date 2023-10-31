@@ -10,6 +10,9 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 import {RoutingModule} from "./routing.module";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
 import {NgOptimizedImage} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
+import {RegistrationComponent} from "./components/registration/registration.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,15 +21,18 @@ import {NgOptimizedImage} from "@angular/common";
     PlantComponent,
     NavbarComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RegistrationComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterLink,
-        RouterLinkActive,
-        RoutingModule,
-        NgOptimizedImage
-    ],
+  imports: [
+    BrowserModule,
+    RouterLink,
+    RouterLinkActive,
+    RoutingModule,
+    NgOptimizedImage,
+    HttpClientModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
