@@ -13,6 +13,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {RegistrationComponent} from "./components/registration/registration.component";
 import {FormsModule} from "@angular/forms";
+import {LoginComponent} from "./components/login/login.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from "@angular/forms";
     NavbarComponent,
     HomeComponent,
     NotFoundComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

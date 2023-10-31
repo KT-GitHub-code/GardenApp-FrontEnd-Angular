@@ -4,6 +4,7 @@ import {GardenComponent} from "./components/garden/garden.component";
 import {HomeComponent} from "./components/home/home.component";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
 import {RegistrationComponent} from "./components/registration/registration.component";
+import {LoginComponent} from "./components/login/login.component";
 
 
 // ROUTES
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'Home', component: HomeComponent},
   {path: 'Garden', component: GardenComponent},
   {path: 'Registration', component: RegistrationComponent},
+  {path: 'Login', component: LoginComponent},
   {path: '**', component: NotFoundComponent},
 ]
 

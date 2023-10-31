@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Plant} from "../models/plant";
+import {map} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,18 +10,24 @@ export class PlantService {
 
   constructor(private http: HttpClient) { }
 
-  getPlants() {
+  private token:string = localStorage.getItem('token');
+
+  getPlants(): Plant[] {
     console.log("Fetching plants from PlantService.");
-    // this.http.get('http://localhost:9000/api/plantsbygardenid/1')
-    this.http.get('https://gardenapp-iddqd-default-rtdb.europe-west1.firebasedatabase.app/plants.json')
+    let plants: Plant[] = [];
+    this.http.get('http://localhost:9000/api/plantsbygardenid/1',
+      {
+        headers: {Authorization: 'Bearer '+ this.token, 'Content-Type': 'application/json'},
+        withCredentials: true
+      })
+      .pipe(map((res)=>{
+        // @ts-ignore
+        for (let p of res){
+          plants.push(p)
+        }
+      }))
       .subscribe((res)=>{console.log(res);});
-
+    return plants;
   }
 
-  postDummyPlants() {
-    console.log("Posting dummy plants.");
-    const plants: Plant[] = [{id:1,type:'aloe',gardenId:1}, {id:2,type:'sedum',gardenId:1}];
-    this.http.post('https://gardenapp-iddqd-default-rtdb.europe-west1.firebasedatabase.app/plants.json', plants)
-      .subscribe();
-  }
 }

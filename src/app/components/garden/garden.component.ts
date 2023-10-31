@@ -12,25 +12,16 @@ export class GardenComponent implements OnInit{
   constructor(private plantService: PlantService) {
   }
 
-  plants: Plant[] = [
-    // {id: 1, type: 'aloe', gardenId: 1},
-    // {id: 2, type: 'sedum', gardenId: 1},
-    // {id: 3, type: 'senecio', gardenId: 1},
-    // {id: 4, type: 'crassula', gardenId: 1},
-  ];
+  plants: Plant[] = [];
 
   ngOnInit() {
 
-    this.postDummyPlants();
     this.fetchPlants();
 
   }
 
-  private fetchPlants() {
-    this.plantService.getPlants();
+  private fetchPlants(): void {
+    this.plants = this.plantService.getPlants();
   }
 
-  private postDummyPlants() {
-    this.plantService.postDummyPlants();
-  }
 }
