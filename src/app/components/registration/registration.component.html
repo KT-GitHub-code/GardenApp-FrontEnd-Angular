@@ -6,4 +6,10 @@
   <input type="password" name="password" ngModel/>
 
   <button>Register</button>
+  <p>
+    Already registered?<br />
+    <span class="line">
+      <a routerLink="/Login" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Login</a>
+    </span>
+  </p>
 </form>

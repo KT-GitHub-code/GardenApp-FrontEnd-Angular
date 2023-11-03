@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {NgForm} from "@angular/forms";
+import {GlobalService} from "../../services/global.service";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import {NgForm} from "@angular/forms";
 })
 export class LoginComponent {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private globalService: GlobalService) {
   }
 
   username: string;
@@ -29,6 +31,7 @@ export class LoginComponent {
       .subscribe((res)=>{
         console.log(res);
         localStorage.setItem('token', res['token']);
+        this.globalService.userLoggedIn=true;
       });
   }
 }

@@ -1,8 +1,22 @@
 <div class="page-header-primary">
   <div class="page-header-primary-nav">
-    <a routerLink="Home" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Home</a> |
-    <a routerLink="Garden" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Garden</a> |
-    <a routerLink="Registration" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Registration</a> |
+    <span>
+    <a routerLink="Home" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    </span>
+    <span>|</span>
+    <span *ngIf="globalService.userLoggedIn">
+    <a routerLink="Garden" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Garden</a>
+    <span>|</span>
+    </span>
+    <span *ngIf="!globalService.userLoggedIn">
+    <a routerLink="Registration" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Registration</a>
+    <span>|</span>
+    </span>
+    <span *ngIf="!globalService.userLoggedIn">
     <a routerLink="Login" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Login</a>
+    </span>
+    <span *ngIf="globalService.userLoggedIn">
+    <a (click)="logout()" routerLink="Logout" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Logout</a>
+    </span>
   </div>
 </div>
