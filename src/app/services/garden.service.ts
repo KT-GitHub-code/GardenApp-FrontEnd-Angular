@@ -1,34 +1,30 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Plant} from "../models/plant";
+import {Garden} from "../models/garden";
 import {map} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class PlantService {
+export class GardenService {
 
   constructor(private http: HttpClient) { }
 
   private token:string = localStorage.getItem('token');
-  plants: Plant[];
+  garden: Garden = null;
 
-  getPlants(): void {
-    console.log("Fetching plants from PlantService.");
-    let plants: Plant[] = [];
-    this.http.get('http://localhost:9000/api/plantsbygardenid/1',
+  getGarden(): void {
+    let g: Garden;
+    this.http.get('http://localhost:9000/api/gardens/1',
       {
         headers: {Authorization: 'Bearer '+ this.token, 'Content-Type': 'application/json'},
         withCredentials: true
-      })
+      }
+      )
       .pipe(map((res)=>{
-        // @ts-ignore
-        for (let p of res){
-          plants.push(p)
-        }
+        g = <Garden>res;
+        this.garden = g;
       }))
       .subscribe();
-    this.plants = plants;
   }
-
 }

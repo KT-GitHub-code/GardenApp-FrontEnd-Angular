@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Plant} from "../../models/plant";
 import {PlantService} from "../../services/plant.service";
+import {GardenService} from "../../services/garden.service";
 
 @Component({
   selector: 'app-garden',
@@ -9,19 +9,25 @@ import {PlantService} from "../../services/plant.service";
 })
 export class GardenComponent implements OnInit{
 
-  constructor(private plantService: PlantService) {
+  constructor(
+    public gardenService: GardenService,
+    public plantService: PlantService
+  ) {
   }
 
-  plants: Plant[] = [];
 
   ngOnInit() {
 
+    this.fetchGarden();
     this.fetchPlants();
-
   }
 
   private fetchPlants(): void {
-    this.plants = this.plantService.getPlants();
+    this.plantService.getPlants();
+  }
+
+  private fetchGarden(): void {
+    this.gardenService.getGarden();
   }
 
 }

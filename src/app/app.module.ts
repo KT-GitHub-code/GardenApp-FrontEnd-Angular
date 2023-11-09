@@ -14,18 +14,22 @@ import {HttpClientModule} from "@angular/common/http";
 import {RegistrationComponent} from "./components/registration/registration.component";
 import {FormsModule} from "@angular/forms";
 import {LoginComponent} from "./components/login/login.component";
+import {GardenCheckerComponent} from "./components/garden-checker/garden-checker.component";
+import {AddPlantComponent} from "./components/add-plant/add-plant.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    GardenComponent,
-    PlantComponent,
-    NavbarComponent,
-    HomeComponent,
-    NotFoundComponent,
-    RegistrationComponent,
-    LoginComponent
-  ],
+    declarations: [
+        AppComponent,
+        GardenComponent,
+        PlantComponent,
+        NavbarComponent,
+        HomeComponent,
+        NotFoundComponent,
+        RegistrationComponent,
+        LoginComponent,
+        GardenCheckerComponent,
+        AddPlantComponent
+    ],
   imports: [
     BrowserModule,
     RouterLink,
