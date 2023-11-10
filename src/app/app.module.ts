@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import {LoginComponent} from "./components/login/login.component";
 import {GardenCheckerComponent} from "./components/garden-checker/garden-checker.component";
 import {AddPlantComponent} from "./components/add-plant/add-plant.component";
+import {NewPlantCreatorComponent} from "./components/new-plant-creator/new-plant-creator.component";
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import {AddPlantComponent} from "./components/add-plant/add-plant.component";
         RegistrationComponent,
         LoginComponent,
         GardenCheckerComponent,
-        AddPlantComponent
+        AddPlantComponent,
+        NewPlantCreatorComponent
     ],
   imports: [
     BrowserModule,
