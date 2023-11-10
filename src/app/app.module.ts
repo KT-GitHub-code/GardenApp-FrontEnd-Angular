@@ -17,6 +17,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {GardenCheckerComponent} from "./components/garden-checker/garden-checker.component";
 import {AddPlantComponent} from "./components/add-plant/add-plant.component";
 import {NewPlantCreatorComponent} from "./components/new-plant-creator/new-plant-creator.component";
+import {NewPlantCardComponent} from "./components/new-plant-card/new-plant-card.component";
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import {NewPlantCreatorComponent} from "./components/new-plant-creator/new-plant
         LoginComponent,
         GardenCheckerComponent,
         AddPlantComponent,
-        NewPlantCreatorComponent
+        NewPlantCreatorComponent,
+        NewPlantCardComponent
     ],
   imports: [
     BrowserModule,

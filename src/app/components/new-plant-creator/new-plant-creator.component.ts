@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class NewPlantCreatorComponent {
 
+  plantTypes: string[] = [
+    "AEONIUM",
+    "AGAVE",
+    "ALOE",
+    "CRASSULA",
+    "ECHEVERIA",
+    "EUPHORBIA",
+    "GASTERIA",
+    "GRAPTOPETALUM",
+    "HAWORTHIA",
+    "KALANCHOE",
+    "MAMMILLARIA",
+    "OPUNTIA",
+    "SEDUM",
+    "SEMPERVIVUM",
+    "SENECIO"
+  ];
+
 }
