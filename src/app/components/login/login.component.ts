@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {NgForm} from "@angular/forms";
 import {GlobalService} from "../../services/global.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ import {GlobalService} from "../../services/global.service";
 export class LoginComponent {
 
   constructor(private http: HttpClient,
-              private globalService: GlobalService) {
+              private globalService: GlobalService,
+              private router: Router) {
   }
 
   username: string;
@@ -33,5 +35,6 @@ export class LoginComponent {
         localStorage.setItem('token', res['token']);
         this.globalService.userLoggedIn=true;
       });
+    this.router.navigate(['Garden']);
   }
 }

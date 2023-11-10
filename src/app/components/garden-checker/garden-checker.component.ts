@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-garden-checker',
@@ -10,7 +11,7 @@ export class GardenCheckerComponent {
 
   token = localStorage.getItem('token');
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   createGarden() {
@@ -19,7 +20,7 @@ export class GardenCheckerComponent {
       {headers: { Authorization: 'Bearer '+ this.token,'Content-Type': 'application/json' }, withCredentials: true}
     )
       .subscribe((res)=>{console.log(res);});
-
+    this.router.navigate(['Home']);
   }
 
 }

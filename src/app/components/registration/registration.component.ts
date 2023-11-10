@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {NgForm} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +11,7 @@ import {NgForm} from "@angular/forms";
 export class RegistrationComponent {
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   username: string;
@@ -29,5 +30,6 @@ export class RegistrationComponent {
       {headers: { 'Content-Type': 'application/json' }, withCredentials: true})
       .subscribe((res)=>{console.log(res);});
     console.log("Registration submitted");
+    this.router.navigate(['Login']);
   }
 }
