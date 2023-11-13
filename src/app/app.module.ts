@@ -18,6 +18,7 @@ import {GardenCheckerComponent} from "./components/garden-checker/garden-checker
 import {AddPlantComponent} from "./components/add-plant/add-plant.component";
 import {NewPlantCreatorComponent} from "./components/new-plant-creator/new-plant-creator.component";
 import {NewPlantCardComponent} from "./components/new-plant-card/new-plant-card.component";
+import {PlantAddedComponent} from "./components/plant-added/plant-added.component";
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import {NewPlantCardComponent} from "./components/new-plant-card/new-plant-card.
         GardenCheckerComponent,
         AddPlantComponent,
         NewPlantCreatorComponent,
-        NewPlantCardComponent
+        NewPlantCardComponent,
+        PlantAddedComponent
     ],
   imports: [
     BrowserModule,

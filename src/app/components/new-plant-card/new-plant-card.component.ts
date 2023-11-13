@@ -1,6 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
 import {GardenService} from "../../services/garden.service";
 
 @Component({
@@ -15,8 +14,9 @@ export class NewPlantCardComponent {
 
   token = localStorage.getItem('token');
 
+  @Output() plantAdditionSuccessEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor(private http: HttpClient,
-              private router: Router,
               private gardenService: GardenService) {
   }
 
@@ -28,8 +28,12 @@ export class NewPlantCardComponent {
       },
       {headers: { Authorization: 'Bearer '+ this.token,'Content-Type': 'application/json' }, withCredentials: true}
     )
-      .subscribe((res)=>{console.log(res);});
-    this.router.navigate(['Home']);
-
+      .subscribe();
+    this.emitPlantAdditionSuccess(true);
   }
+
+  emitPlantAdditionSuccess(value: boolean){
+    this.plantAdditionSuccessEvent.emit(value);
+  }
+
 }

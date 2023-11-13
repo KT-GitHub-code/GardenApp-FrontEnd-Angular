@@ -25,4 +25,13 @@ export class NewPlantCreatorComponent {
     "SENECIO"
   ];
 
+  plantAddedSuccess: boolean = false;
+
+  plantAddedType: string;
+
+  receivePlantAdditionSuccess($event, type){
+    this.plantAddedSuccess = $event;
+    this.plantAddedType = type;
+  }
+
 }

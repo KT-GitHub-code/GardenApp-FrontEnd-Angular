@@ -1,0 +1,12 @@
+<h2>
+  Your new
+  <!--  {{plantType}}-->
+  <app-plant [plant]="plantAddition()"></app-plant>
+  Plant was sent to your
+  <a routerLink="/Garden"
+     [routerLinkActive]="'active'"
+     [routerLinkActiveOptions]="{exact: true}">
+    Garden
+  </a>
+  !
+</h2>

@@ -1,1 +1,10 @@
-<app-new-plant-card *ngFor="let type of plantTypes" [plantType]="type"></app-new-plant-card>
+<div *ngIf="!plantAddedSuccess">
+  <app-new-plant-card
+    *ngFor="let type of plantTypes" [plantType]="type"
+    (plantAdditionSuccessEvent)="receivePlantAdditionSuccess($event, type)">
+  </app-new-plant-card>
+</div>
+
+<div *ngIf="plantAddedSuccess">
+  <app-plant-added [plantType]="plantAddedType"></app-plant-added>
+</div>

@@ -3,4 +3,8 @@ export class Plant{
   type: string;
   gardenId: number;
 
+
+  constructor(type: string) {
+    this.type = type;
+  }
 }
