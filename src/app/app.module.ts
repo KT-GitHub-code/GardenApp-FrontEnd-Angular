@@ -14,7 +14,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {RegistrationComponent} from "./components/registration/registration.component";
 import {FormsModule} from "@angular/forms";
 import {LoginComponent} from "./components/login/login.component";
-import {GardenCheckerComponent} from "./components/garden-checker/garden-checker.component";
 import {AddPlantComponent} from "./components/add-plant/add-plant.component";
 import {NewPlantCreatorComponent} from "./components/new-plant-creator/new-plant-creator.component";
 import {NewPlantCardComponent} from "./components/new-plant-card/new-plant-card.component";
@@ -30,7 +29,6 @@ import {PlantAddedComponent} from "./components/plant-added/plant-added.componen
         NotFoundComponent,
         RegistrationComponent,
         LoginComponent,
-        GardenCheckerComponent,
         AddPlantComponent,
         NewPlantCreatorComponent,
         NewPlantCardComponent,

@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Garden} from "../models/garden";
 import {map} from "rxjs";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GardenService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private router: Router) { }
 
   private token:string = localStorage.getItem('token');
   garden: Garden = null;
@@ -27,4 +29,14 @@ export class GardenService {
       }))
       .subscribe();
   }
+
+  createGarden() {
+    this.http.post('http://localhost:9000/api/garden',
+      JSON.stringify({ }),
+      {headers: { Authorization: 'Bearer '+ this.token,'Content-Type': 'application/json' }, withCredentials: true}
+    )
+      .subscribe((res)=>{console.log(res);});
+    this.router.navigate(['Home']);
+  }
+
 }

@@ -1,5 +1,3 @@
-<app-garden-checker *ngIf="gardenService.garden==undefined"></app-garden-checker>
-
 <app-plant *ngFor="let p of plantService.plants" [plant]="p"></app-plant>
 
 <app-add-plant *ngIf="gardenService.garden!=null"></app-add-plant>
