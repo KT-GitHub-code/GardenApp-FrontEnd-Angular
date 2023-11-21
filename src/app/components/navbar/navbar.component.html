@@ -4,18 +4,18 @@
     <a routerLink="Home" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Home</a>
     </span>
     <span>|</span>
-    <span *ngIf="globalService.userLoggedIn">
+    <span *ngIf="globalService.isUserLoggedIn">
     <a routerLink="Garden" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Garden</a>
     <span>|</span>
     </span>
-    <span *ngIf="!globalService.userLoggedIn">
+    <span *ngIf="!globalService.isUserLoggedIn">
     <a routerLink="Registration" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Registration</a>
     <span>|</span>
     </span>
-    <span *ngIf="!globalService.userLoggedIn">
+    <span *ngIf="!globalService.isUserLoggedIn">
     <a routerLink="Login" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Login</a>
     </span>
-    <span *ngIf="globalService.userLoggedIn">
+    <span *ngIf="globalService.isUserLoggedIn">
     <a (click)="logout()" routerLink="Logout" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">Logout</a>
     </span>
   </div>

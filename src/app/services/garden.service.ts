@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Garden} from "../models/garden";
 import {map} from "rxjs";
 import {Router} from "@angular/router";
+import {GlobalService} from "./global.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +11,15 @@ import {Router} from "@angular/router";
 export class GardenService {
 
   constructor(private http: HttpClient,
-              private router: Router) { }
+              private router: Router,
+              private globalService: GlobalService) { }
 
   private token:string = localStorage.getItem('token');
   garden: Garden = null;
 
   getGarden(): void {
     let g: Garden;
-    this.http.get('http://localhost:9000/api/gardens/1',
+    this.http.get('http://localhost:9000/api/gardens/'+this.globalService.currentUserId,
       {
         headers: {Authorization: 'Bearer '+ this.token, 'Content-Type': 'application/json'},
         withCredentials: true

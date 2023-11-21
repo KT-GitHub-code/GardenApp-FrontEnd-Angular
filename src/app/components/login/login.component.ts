@@ -35,7 +35,8 @@ export class LoginComponent {
       .subscribe((res)=>{
         console.log(res);
         localStorage.setItem('token', res['token']);
-        this.globalService.userLoggedIn=true;
+        this.globalService.isUserLoggedIn=true;
+        this.globalService.getUserId(this.username);
         this.gardenService.getGarden();
       });
 

@@ -13,6 +13,7 @@ export class NavbarComponent {
   }
 
   logout() {
-    this.globalService.userLoggedIn=false;
+    this.globalService.isUserLoggedIn=false;
+    this.globalService.currentUserId = undefined;
   }
 }
